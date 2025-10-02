@@ -1,19 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
-    --cor-principal: #6E859F;
-    --cor-secundaria: #284260;
-    --cor-destaque: #C92BFC;
+    --cor-principal: #5e2020;
+    --cor-secundaria: #490000;
+    --cor-destaque: #fc2b2b;
+    --cor-background: mistyrose;
+    --cor-hover: darksalmon;
 }
 
 body {
     font-family: 'Chakra Petch', sans-serif;
     color: var(--cor-principal);
+    background-color: var(--cor-background);
 }
 
 h1, h2, h5 {
     color: var(--cor-secundaria);
     font-weight: 700;
+}
+
+button {
+    border: none;
 }
 
 .lead, .btn-link {
@@ -25,6 +32,27 @@ a, .btn-link:hover {
     color: var(--cor-principal)
 }
 
-a:hover{
+a:hover {
     color: var(--cor-destaque);
+}
+
+.local-link:hover {
+    color: var(--cor-hover);
+}
+
+.local-link {
+    background-color: var(--cor-secundaria);
+}
+
+.local-wine {
+    color: var(--cor-secundaria);
+}
+
+.local-red {
+    border-color: var(--cor-destaque);
+}
+
+::selection {
+    background-color: var(--cor-principal);
+    color: var(--cor-background);
 }
