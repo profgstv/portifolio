@@ -19,8 +19,17 @@ h1, h2, h5 {
     font-weight: 700;
 }
 
+h2 {
+    margin-right: 10px;
+}
+
 button {
     border: none;
+}
+
+.side-button {
+    display: flex;
+    align-items: center;
 }
 
 .btn-link {
