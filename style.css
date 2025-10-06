@@ -65,6 +65,14 @@ a:hover {
     border-color: var(--cor-destaque);
 }
 
+.card {
+    margin-bottom: 1em;
+}
+
+.modal-content {
+    background-color: white;
+}
+
 ::selection {
     background-color: var(--cor-principal);
     color: var(--cor-background);
