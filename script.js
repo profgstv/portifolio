@@ -24,6 +24,38 @@ const referenceElement = document.getElementById("reference");
 
 const randomizedProjects = projectsList.projectName.toSorted(() => Math.random() - 0.5);
 
+const techsList = ["Linux", "JavaScript", "C++", "Python", "HTML", "CSS", "Scratch", "Arduino", "Micro:bit", "MakeCode"];
+const randomizedTechs = techsList.toSorted(() => Math.random() - 0.5);
+
+for(let i in randomizedTechs) {
+    let techs = document.getElementById("techBadges");
+    let techButton = document.createElement("button");
+    techs.appendChild(techButton);
+    techButton.setAttribute("class", "badge local-link");
+    techButton.innerHTML = randomizedTechs[i];
+}
+
+const communitiesList = {
+    "GitHub": "https://github.com/profgstv",
+    "P5.js": "https://editor.p5js.org/gustavodal/sketches",
+    "Scratch": "https://scratch.mit.edu/users/profgstv/",
+    "Tinkercad": "https://www.tinkercad.com/users/fCvRHkvJnfc"
+}
+
+const randomizedCommunities = Object.keys(communitiesList).toSorted(() => Math.random() - 0.5);
+
+for(let i in randomizedCommunities) {
+    let communityURL = communitiesList[randomizedCommunities[i]];
+    let communities = document.getElementById("communitiesBadges");
+    let communityLink = document.createElement("a");
+    let communityButton = document.createElement("button");
+    communities.appendChild(communityLink);
+    communityLink.setAttribute("href", communityURL);
+    communityLink.appendChild(communityButton);
+    communityButton.setAttribute("class", "badge local-link");
+    communityButton.innerHTML = randomizedCommunities[i];
+}
+
 function createCard(a) {
     let i = projectsList.projectName.indexOf(randomizedProjects[a]);
 
