@@ -1,3 +1,9 @@
+/*
+    Script para criação dinâmica dos cards de projetos, modais de detalhes, badges de tecnologias e badges de comunidades.
+    Autor: Gustavo Dal Farra Miguel Jorge
+    Data: 2025-10-09
+*/
+//Objetos, Arrays e Variáveis
 const projectsList = {
     projectName: ["Recomendador de Digimons", "Bem vindos ao Egito", "Monalisa no P5.js", "Jogo da Nave", "Sorteador de Palavras", "Jogo do Pong no P5.js", "Rádio Inovação CIEBP", "Simulador de Coordenadas", "Scratch Giratório no P5.js", "Digimon Card Battle", "Jogo do Pong no Scratch", "Salve o Planeta no Scratch", "Carrinho de Drift", "Carrinho de Eixo"],
     src: ["./img/proj-p5-digimon.png", "./img/proj-p5-egito.png", "./img/proj-p5-monalisa.png", "./img/proj-p5-nave-desvio.png", "./img/proj-p5-palavra.png", "./img/proj-p5-pong.png", "./img/proj-p5-radio.png", "./img/proj-p5-sim-coord-controle-drift.png", "./img/proj-p5-spinning-scratch.png", "./img/proj-scratch-digimon-card-battle.png", "./img/proj-scratch-pong.png", "./img/proj-scratch-salve-o-planeta.png", "./img/proj-tinkercad-carrinho-drift.png", "./img/proj-tinkercad-carrinho-eixo.png"],
@@ -19,21 +25,7 @@ const projectsList = {
     linkName4: [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
 }
 
-const parentElement = document.body;
-const referenceElement = document.getElementById("reference");
-
-const randomizedProjects = projectsList.projectName.toSorted(() => Math.random() - 0.5);
-
 const techsList = ["Linux", "JavaScript", "C++", "Python", "HTML", "CSS", "Scratch", "Arduino", "Micro:bit", "MakeCode"];
-const randomizedTechs = techsList.toSorted(() => Math.random() - 0.5);
-
-for(let i in randomizedTechs) {
-    let techs = document.getElementById("techBadges");
-    let techButton = document.createElement("button");
-    techs.appendChild(techButton);
-    techButton.setAttribute("class", "badge local-link");
-    techButton.innerHTML = randomizedTechs[i];
-}
 
 const communitiesList = {
     "GitHub": "https://github.com/profgstv",
@@ -42,19 +34,12 @@ const communitiesList = {
     "Tinkercad": "https://www.tinkercad.com/users/fCvRHkvJnfc"
 }
 
+const randomizedProjects = projectsList.projectName.toSorted(() => Math.random() - 0.5);
+const randomizedTechs = techsList.toSorted(() => Math.random() - 0.5);
 const randomizedCommunities = Object.keys(communitiesList).toSorted(() => Math.random() - 0.5);
 
-for(let i in randomizedCommunities) {
-    let communityURL = communitiesList[randomizedCommunities[i]];
-    let communities = document.getElementById("communitiesBadges");
-    let communityLink = document.createElement("a");
-    let communityButton = document.createElement("button");
-    communities.appendChild(communityLink);
-    communityLink.setAttribute("href", communityURL);
-    communityLink.appendChild(communityButton);
-    communityButton.setAttribute("class", "badge local-link");
-    communityButton.innerHTML = randomizedCommunities[i];
-}
+const parentElement = document.body;
+const referenceElement = document.getElementById("reference");
 
 function createCard(a) {
     let i = projectsList.projectName.indexOf(randomizedProjects[a]);
@@ -101,7 +86,6 @@ function createCard(a) {
     cardButton.setAttribute("data-bs-target", "#" + projectsList.modalID[i]);
     cardButton.innerHTML = "Detalhes";
 }
-
 
 function createModal(a) {
     let i = projectsList.projectName.indexOf(randomizedProjects[a]);
@@ -199,4 +183,24 @@ function createModal(a) {
 for(let i in projectsList.projectName) {;
     createCard(i);
     createModal(i);
+}
+
+for(let i in randomizedTechs) {
+    let techs = document.getElementById("techBadges");
+    let techButton = document.createElement("button");
+    techs.appendChild(techButton);
+    techButton.setAttribute("class", "badge local-link");
+    techButton.innerHTML = randomizedTechs[i];
+}
+
+for(let i in randomizedCommunities) {
+    let communityURL = communitiesList[randomizedCommunities[i]];
+    let communities = document.getElementById("communitiesBadges");
+    let communityLink = document.createElement("a");
+    let communityButton = document.createElement("button");
+    communities.appendChild(communityLink);
+    communityLink.setAttribute("href", communityURL);
+    communityLink.appendChild(communityButton);
+    communityButton.setAttribute("class", "badge local-link");
+    communityButton.innerHTML = randomizedCommunities[i];
 }
