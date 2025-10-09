@@ -115,11 +115,11 @@ function createModal(i) {
     modalDiv4.setAttribute("class", "modal-body");
     modalDiv4.appendChild(modalDescription0);
     modalDescription0.innerHTML = projectsList.description0[i];
-    if(modalDescription1 !== " ") {
+    if(projectsList.description1[i] != " ") {
         modalDiv4.appendChild(modalDescription1);
         modalDescription1.innerHTML = "<br>" + projectsList.description1[i];
     }
-    if(modalDescription2 !== " ") {
+    if(projectsList.description2[i] != " ") {
         modalDiv4.appendChild(modalDescription2);
         modalDescription2.innerHTML = "<br>" + projectsList.description2[i];
     }
