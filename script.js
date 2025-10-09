@@ -41,6 +41,7 @@ const randomizedCommunities = Object.keys(communitiesList).toSorted(() => Math.r
 const parentElement = document.body;
 const referenceElement = document.getElementById("reference");
 
+
 function createCard(a) {
     let i = projectsList.projectName.indexOf(randomizedProjects[a]);
 
@@ -86,7 +87,6 @@ function createCard(a) {
     cardButton.setAttribute("data-bs-target", "#" + projectsList.modalID[i]);
     cardButton.innerHTML = "Detalhes";
 }
-
 function createModal(a) {
     let i = projectsList.projectName.indexOf(randomizedProjects[a]);
 
@@ -184,7 +184,6 @@ for(let i in projectsList.projectName) {;
     createCard(i);
     createModal(i);
 }
-
 for(let i in randomizedTechs) {
     let techs = document.getElementById("techBadges");
     let techButton = document.createElement("button");
@@ -192,7 +191,6 @@ for(let i in randomizedTechs) {
     techButton.setAttribute("class", "badge local-link");
     techButton.innerHTML = randomizedTechs[i];
 }
-
 for(let i in randomizedCommunities) {
     let communityURL = communitiesList[randomizedCommunities[i]];
     let communities = document.getElementById("communitiesBadges");
