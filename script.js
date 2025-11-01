@@ -25,7 +25,7 @@ const projectsList = {
     linkName4: [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
 }
 
-const techsList = ["Linux", "JavaScript", "HTML", "CSS", "Scratch", "Micro:bit", "MakeCode"/*, "Python", "Arduino", "C++"*/];
+const techsList = ["Linux", "JavaScript", "HTML", "CSS", "Scratch", "Micro:bit", "MakeCode", "Python"/*, "Arduino", "C++"*/];
 
 const communitiesList = {
     "GitHub": "https://github.com/profgstv",

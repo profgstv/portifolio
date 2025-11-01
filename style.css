@@ -50,6 +50,11 @@ a:hover {
     color: var(--cor-destaque);
 }
 
+.col-md-4 {
+    display: flex;
+    align-items: center;
+}
+
 .local-link:hover {
     color: var(--cor-hover);
 }
